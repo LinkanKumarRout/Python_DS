@@ -79,7 +79,7 @@ print(Tuple[-3])
 '''
 # Set Data Structure
 '''
-Set is a cllection of unique and unordered elements enclosed by {}
+Set is a collection of unique and unordered elements enclosed by {}
 - set does not support index no. bcz the insertion order in set is not fixed.
 - set does not support concatenation and repeatation
 -  sets are mutable that means we can add, delete data into/from our set
