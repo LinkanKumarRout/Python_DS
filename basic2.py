@@ -43,3 +43,19 @@ and the process of removing element is called dequeue
 like uploading post, photo, comments
 - call center
 '''
+# Priority Queue
+'''
+Are a modified version of queue where each element is associated with priority and they are served based on their priority.
+if two element has same priority then element will be served as it's order
+'''
+'''
+- priority may be the value itself
+  - lowest the element highest the priority
+  - highest the element highest the priority
+- a tuple that hold value as well as priority
+'''
+# implimenting priority queue
+'''
+- list
+- PriorityQueue from queuq module
+'''
