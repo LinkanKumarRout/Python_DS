@@ -18,3 +18,28 @@ it follows LIFO or FILO
 - expression evaluation like prefix to postfix
 - forward and backward feature in a browser
 '''
+
+
+# Queue Data Structure
+'''
+It is a linear data structure where element is added at one end(back/tail) and is removed at the other end(head/front)
+
+it follows FIFO or LILO
+'''
+'''
+the process of adding elements to the queue is called enqueue
+and the process of removing element is called dequeue
+'''
+# operation
+'''
+- enqueue
+- dequeue
+- isFull()
+- isEmpty()
+'''
+# application
+'''
+- fifo scenario
+like uploading post, photo, comments
+- call center
+'''
