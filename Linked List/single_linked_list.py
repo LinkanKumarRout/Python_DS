@@ -58,14 +58,53 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
+    # function to print the linked list
     def print_LL(self):
         if self.head is None:
             print("Linked List is empty.")
         else:
             n = self.head
             while n is not None:
-                print(n.data)
-                n = n.ref
+                print(n.data, "-->", end = " ") # print data
+                n = n.ref # go to next node
 
-LL1 = LinkedList()
+    # add element at the beginning
+    def add_begin(self, data):
+        new_node = Node(data)
+        new_node.ref = self.head
+        self.head = new_node
+
+    # add element at the end
+    def add_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            n = self.head
+            while n.ref is not None:
+                n = n.ref
+            n.ref = new_node 
+
+    # add element inbetween two nodes
+    def add_inbetween(self, data, x):
+        n = self.head
+        while n is not None:
+            if n.data == x:
+                break
+            n = n.ref
+        if n is None:
+            print("Node not found")
+        else:
+            new_node = Node(data)
+            new_node.ref = n.ref
+            n.ref = new_node
+
+LL1 = LinkedList() # create object
+# add element at the beginning
+LL1.add_begin(10)
+LL1.add_begin(20)
+LL1.add_begin("linkan")
+# add element at the end
+LL1.add_end(30)
+LL1.add_end(40)
 LL1.print_LL()
