@@ -47,3 +47,25 @@ Removing an Element from Between Two Nodes in a Linked List
 - Find the Node to be Removed: Traverse the list to find the node before the one to be removed.
 - Update the Next of the Previous Node: Set the next of the previous node to the next of the node to be removed.
 '''
+# program to create single linked list
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.ref = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    
+    def print_LL(self):
+        if self.head is None:
+            print("Linked List is empty.")
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data)
+                n = n.ref
+
+LL1 = LinkedList()
+LL1.print_LL()
