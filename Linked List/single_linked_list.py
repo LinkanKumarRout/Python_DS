@@ -120,8 +120,19 @@ class LinkedList:
             new_node = Node(data)
             new_node.ref = n.ref
             n.ref = new_node
+    
+    # adding element when linked list is empty
+    def add_when_empty(self, data):
+        if self.head is None:
+            new_node = Node(data)
+            self.head = new_node
+        else:
+            print("Linked List is not empty.")
+
 
 LL1 = LinkedList() # create object
+# add element when linked list is empty
+LL1.add_when_empty(100)
 # add element at the beginning
 LL1.add_begin(10)
 LL1.add_begin(20)
