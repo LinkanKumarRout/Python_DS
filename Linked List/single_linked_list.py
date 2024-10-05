@@ -128,6 +128,25 @@ class LinkedList:
             self.head = new_node
         else:
             print("Linked List is not empty.")
+    
+    # delete element at the beginning
+    def delete_begin(self):
+        if self.head is None:
+            print("Linked List is empty.")
+        else:
+            self.head = self.head.ref
+    
+    # delete element at the end
+    def delete_end(self):
+        if self.head is None:
+            print("Linked List is empty.")
+        elif self.head.ref is None:
+            self.head = None
+        else:
+            n = self.head
+            while n.ref.ref is not None:
+                n = n.ref
+            n.ref = None
 
 
 LL1 = LinkedList() # create object
@@ -144,4 +163,11 @@ LL1.add_end(70)
 LL1.add_after(50, 20)
 # add before a specific node
 LL1.add_before(80, 60)
+
+LL1.print_LL() # to check what are the elements in the linked list
+print("\n")
+# delete element at the beginning
+LL1.delete_begin()
+# delete element at the end
+LL1.delete_end()
 LL1.print_LL()
