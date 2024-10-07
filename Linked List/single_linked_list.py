@@ -148,6 +148,27 @@ class LinkedList:
                 n = n.ref
             n.ref = None
 
+    # delete a specific node by value
+    def delete_node(self, x):
+        if self.head is None:
+            print("Cannot delete. Linked List is empty.")
+            return
+        if self.head.data == x:
+            self.head = self.head.ref
+            return
+        n = self.head
+        while n.ref is not None:
+            if n.ref.data == x:
+                break
+            n = n.ref
+        if n.ref is None:
+            print("Node is not present in the Linked List.")
+        else:
+            n.ref = n.ref.ref
+
+    # delete entire linked list
+    def delete_linked_list(self):
+        self.head = None
 
 LL1 = LinkedList() # create object
 # add element when linked list is empty
@@ -170,4 +191,7 @@ print("\n")
 LL1.delete_begin()
 # delete element at the end
 LL1.delete_end()
+# delete a specific node by value
+LL1.delete_node(60)
+
 LL1.print_LL()
