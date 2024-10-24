@@ -27,7 +27,7 @@ Types of Double Linked List
 
 # program to create double linked list
 class Node:
-    def __init__(self, data)
+    def __init__(self, data):
         self.data = data
         self.pref = None
         self.nref = None
