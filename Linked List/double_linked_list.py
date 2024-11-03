@@ -88,6 +88,46 @@ class DoubleLinkedList:
                 n = n.nref
             n.nref = new_node
             new_node.pref = n
+    
+    # add element after a given node
+    def add_after(self, data, x):
+        if self.head is None:
+            print("Linked List is empty.")
+            return
+        n = self.head
+        while n is not None:
+            if n.data == x:
+                break
+            n = n.nref
+        if n is None:
+            print("Node is not present in the Linked List.")
+        else:
+            new_node = Node(data)
+            new_node.pref = n
+            new_node.nref = n.nref
+            if n.nref is not None: # if it is not last node
+                n.nref.pref = new_node
+            n.nref = new_node
+
+    # add element before a given node
+    def add_before(self, data, x):
+        if self.head is None:
+            print("Linked List is empty.")
+            return
+        n = self.head
+        while n is not None:
+            if n.data == x:
+                break
+            n = n.nref
+        if n is None:
+            print("Node is not present in the Linked List.")
+        else:
+            new_node = Node(data)
+            new_node.pref = n.pref
+            new_node.nref = n
+            if n.pref is not None: # if it is not first node
+                n.pref.nref = new_node
+            n.pref = new_node
 
 dl1 = DoubleLinkedList()
 # add element when linked list is empty
@@ -102,6 +142,10 @@ dl1.add_end(50)
 dl1.add_end(60)
 dl1.add_end(70)
 dl1.add_end(80)
+# add after a specific node
+dl1.add_after(55, 50)
+# add before a specific node
+dl1.add_before(25, 20)
 print("Linked List in Forward Direction: ")
 dl1.print_LL_Forward()
 print("\n")
